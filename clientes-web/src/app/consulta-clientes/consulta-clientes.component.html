@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Consulta de Clientes</h5>
+    <p class="card-text">Listagem de clientes</p>
+    <hr />
+
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>CPF</th>
+        <th>Data de Nascimento</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{ cliente.nome }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.cpf }}</td>
+        <td>{{ cliente.dataNascimento | date:'dd/MM/yyyy' }}</td>
+        <td>
+          <div class="btn-group" role="group">
+            <button class="btn btn-outline-primary btn-sm" (click)="editarCliente(cliente.idCliente)">Editar</button>
+            <button class="btn btn-outline-danger btn-sm" (click)="excluirCliente(cliente.idCliente)">Excluir</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

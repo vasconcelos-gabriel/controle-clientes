@@ -1,0 +1,70 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Cadastro de clientes</h5>
+    <p class="card-text">Preencha os campos para cadastrar um cliente.</p>
+    <hr />
+
+    <form (submit)="cadastrarCliente()">
+      <div class="row mb-3">
+        <div class="col-md-8">
+          <label>Nome do cliente:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            name="nome"
+            [(ngModel)]="nome"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="cpf">CPF:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cpf"
+            name="cpf"
+            [(ngModel)]="cpf"
+            required
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="dataNascimento">Data de Nascimento:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dataNascimento"
+            name="dataNascimento"
+            [(ngModel)]="dataNascimento"
+            required
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <input
+            type="submit"
+            value="Cadastrar Cliente"
+            class="btn btn-success"
+          />
+        </div>
+      </div>
+      <div class="alert alert-success" *ngIf="cadastroSucesso">
+        Cliente cadastrado com sucesso!
+      </div>
+    </form>
+  </div>
+</div>
